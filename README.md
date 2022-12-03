@@ -33,7 +33,7 @@ To install LSPDFR Reborn, simply drag the downloaded file into your GTA V direct
 ## License
 
 =======
-This project is licensed under the [GNU License](LICENSE.md)
+This project is licensed under the [GNU License](LICENSE)
 
 
 ## Acknowledgments
