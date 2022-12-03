@@ -9,6 +9,8 @@ namespace LSPDFR_Reborn
 {
     public class LSPDFRReborn : Plugin
     {
+        private static bool _onDuty = false;
+
         // Called when the plug-in is being initialized (LSPDFR loaded)
         public override void Initialize()
         {
@@ -18,6 +20,7 @@ namespace LSPDFR_Reborn
         // Called when going on/off duty
         private static void OnOnDutyStateChangedHandler(bool OnDuty)
         {
+            _onDuty = OnDuty;
         }
 
         // Called when the plug-in is being shut off (LSPDFR unloaded)
