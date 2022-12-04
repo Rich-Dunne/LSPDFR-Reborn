@@ -9,12 +9,23 @@ namespace LSPDFR_Reborn.Util.Processing
 {
     internal class ProcessingPool
     {
+
         private static List<IProcessing> s_processes = new List<IProcessing>(); 
         public static void RegisterProcess(IProcessing process)
         {
-            if(!s_processes.Contains(process))
+            if (!s_processes.Contains(process) && s_canRegister)
             {
                 s_processes.Add(process);
+            }
+        }
+
+        private static bool s_canRegister = true;
+        public static bool CanRegister
+        {
+            get { return s_canRegister; }
+            set
+            {
+                s_canRegister = value;
             }
         }
 
