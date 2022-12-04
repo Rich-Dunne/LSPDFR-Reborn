@@ -1,0 +1,8 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/LSPDFR_Reborn/LSPDFR_Reborn/obj/Debug/LSPDFR_Reborn.csproj.AssemblyReference.cache
+/LSPDFR_Reborn/LSPDFR_Reborn/obj/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cs
+/LSPDFR_Reborn/LSPDFR_Reborn/obj/Release/LSPDFR_Reborn.csproj.AssemblyReference.cache
