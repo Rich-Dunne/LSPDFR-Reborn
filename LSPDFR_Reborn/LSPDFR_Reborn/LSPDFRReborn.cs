@@ -1,4 +1,6 @@
 ﻿using LSPD_First_Response.Mod.API;
+using LSPDFR_Reborn.StopTheCivilian;
+using LSPDFR_Reborn.Util.Processing;
 using Rage;
 using System;
 using System.Collections.Generic;
@@ -12,27 +14,48 @@ namespace LSPDFR_Reborn
     public class LSPDFRReborn : Plugin
     {
         private static bool s_onDuty = false;
-        private static Version s_version = Assembly.GetEntryAssembly().GetName().Version;
+        private static Version s_version = Assembly.GetCallingAssembly().GetName().Version;
 
         // Called when the plug-in is being initialized (LSPDFR loaded)
         public override void Initialize()
         {
             Functions.OnOnDutyStateChanged += OnOnDutyStateChangedHandler;
+
+            ProcessingPool.RegisterProcess(new PedastrianStop());
         }
 
         // Called when going on/off duty
         private static void OnOnDutyStateChangedHandler(bool OnDuty)
         {
             s_onDuty = OnDuty;
-
-            while (true)
+            if (s_onDuty)
             {
-                GameFiber.StartNew(delegate
-                {
-                    // Main Process
-                    GameFiber.Sleep(100);
-                });
+                // Going on duty
+                ProcessingPool.StartProcesses();
+
+                Game.DisplayNotification("LSPDFRReborn started (DEV) " + s_version.ToString());
+                //Game.DisplayNotification("web_lossantospolicedept", "web_lossantospolicedept", "LSPD:FR Reborn", $"~y~{s_version.ToString()} by VELRX-Team.", "Thanks for using.");
+
+            } else
+            {
+                // Going off duty
+                ProcessingPool.StopProcesses();
+
+                Game.DisplayNotification("LSPDFRReborn stopped (DEV) " + s_version.ToString());
+
             }
+
+            GameFiber.StartNew(delegate
+            {
+                while(s_onDuty)
+                {
+                    GameFiber.Yield();
+                    ProcessingPool.UpdateProcesses();
+
+                    GameFiber.Sleep(1);
+                }
+            });
+
         }
 
         // Called when the plug-in is being shut off (LSPDFR unloaded)
