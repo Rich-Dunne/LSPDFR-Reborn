@@ -3,6 +3,8 @@
 ################################################################################
 
 /.vs
-/LSPDFR_Reborn/LSPDFR_Reborn/obj/Debug/LSPDFR_Reborn.csproj.AssemblyReference.cache
-/LSPDFR_Reborn/LSPDFR_Reborn/obj/Release/.NETFramework,Version=v4.8.AssemblyAttributes.cs
-/LSPDFR_Reborn/LSPDFR_Reborn/obj/Release/LSPDFR_Reborn.csproj.AssemblyReference.cache
+/LSPDFR_Reborn/.vs/LSPDFR_Reborn
+/LSPDFR_Reborn/LSPDFR_Reborn/obj/Debug
+/LSPDFR_Reborn/LSPDFR_Reborn/obj/Release
+/LSPDFR_Reborn/LSPDFR_Reborn/bin/Debug
+/LSPDFR_Reborn/LSPDFR_Reborn/bin/Release
