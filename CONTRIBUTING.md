@@ -111,7 +111,7 @@ Enhancement suggestions are tracked as [GitHub issues](/issues).
 4. Manually create a folder named `LSPDFR` within the `packages` folder and place the LSPDFR.dll inside
 > ![image](https://user-images.githubusercontent.com/23438379/205957959-553dcb72-9105-411c-be43-813d211b6359.png)
 
-5. Create a branch specific to the [issue](/issues) you are working on.  If an issue doesn't exist, please [create one](/issues/new).
+5. Create a branch based off of `main` specific to the [issue](/issues) you are working on.  If an issue doesn't exist, please [create one](/issues/new).
 
 > For example, `update-xxx` or `fix-xxx` where `xxx` is a short description of the changes you've made, such as `fix-crash-from-invalid-ped`.
 
