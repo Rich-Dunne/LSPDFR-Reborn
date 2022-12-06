@@ -105,14 +105,20 @@ Enhancement suggestions are tracked as [GitHub issues](/issues).
 
 1. If you are new to Git and Github, please spend some time [learning the basics](https://www.freecodecamp.org/news/git-and-github-for-beginners/).
 2. [Clone the project](https://help.github.com/en/articles/cloning-a-repository)
-3. Create a branch specific to the [issue](/issues) you are working on.  If an issue doesn't exist, please [create one](/issues/new).
+3. Assuming you're using Visual Studio, open the nuget package manager and restore (top right in brown banner) the missing packages (RPH and RNUI)
+> ![image](https://user-images.githubusercontent.com/23438379/205957697-1c47fea3-3ebd-4c0d-8efe-2c0a0a295a6e.png)
 
-For example, `update-xxx` or `fix-xxx` where `xxx` is a short description of the changes you've made, such as `fix-crash-from-invalid-ped`.
+4. Manually create a folder named `LSPDFR` within the `packages` folder and place the LSPDFR.dll inside
+> ![image](https://user-images.githubusercontent.com/23438379/205957959-553dcb72-9105-411c-be43-813d211b6359.png)
 
-4. Open up the project in your favorite text editor, select (or create) the file(s) you want to contribute to, and make your changes.
-5. Commit your changes using a brief yet descriptive commit message
-6. Push your changes to the remote repo
-7. Submit a pull request merging your branch into `dev`.  While writing your PR, you may add `Closes #XXX` in the message body where `#XXX` is the number of the issue you're working on.  For exmaple, `Closes #69` would close issue `#69`.
+5. Create a branch specific to the [issue](/issues) you are working on.  If an issue doesn't exist, please [create one](/issues/new).
+
+> For example, `update-xxx` or `fix-xxx` where `xxx` is a short description of the changes you've made, such as `fix-crash-from-invalid-ped`.
+
+6. Open up the project in your favorite text editor, select (or create) the file(s) you want to contribute to, and make your changes.
+7. Commit your changes using a brief yet descriptive commit message
+8. Push your changes to the remote repo
+9. Submit a pull request merging your branch into `dev`.  While writing your PR, you may add `Closes #XXX` in the message body where `#XXX` is the number of the issue you're working on.  For exmaple, `Closes #69` would close issue `#69`.
 
 Merging into `dev` requires approval by one person.  This means your code will receive at least one review.  You may be asked to make changes before the merge is approved.  Once your code is merged into `dev`, it will be tested in-game for any issues.  Once all changes on `dev` are appear to be bug-free, `dev` can be merged into `main` with the approval of 2 people.
 
