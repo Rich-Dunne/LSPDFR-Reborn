@@ -20,7 +20,7 @@ To install LSPDFR Reborn, simply drag the downloaded file into your GTA V direct
 
 ## Contributing
 
-// TODO
+If you would like to contribute to this project, please read [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Contributors
 

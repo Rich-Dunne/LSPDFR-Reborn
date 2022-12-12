@@ -6,6 +6,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,6 +18,7 @@ namespace LSPDFR_Reborn
     {
         private static bool s_onDuty = false;
         private static Version s_version = Assembly.GetCallingAssembly().GetName().Version;
+        private static bool _onDuty = false;
 
         // Called when the plug-in is being initialized (LSPDFR loaded)
         public override void Initialize()
@@ -22,7 +26,6 @@ namespace LSPDFR_Reborn
             Functions.OnOnDutyStateChanged += OnOnDutyStateChangedHandler;
 
             ProcessingPool.RegisterProcess(new PedastrianStop());
-
             ProcessingPool.CanRegister = false;
         }
 
@@ -57,7 +60,7 @@ namespace LSPDFR_Reborn
                     GameFiber.Sleep(1);
                 }
             });
-
+            _onDuty = OnDuty;
         }
 
         // Called when the plug-in is being shut off (LSPDFR unloaded)
@@ -65,7 +68,5 @@ namespace LSPDFR_Reborn
         {
 
         }
-
-
     }
 }
