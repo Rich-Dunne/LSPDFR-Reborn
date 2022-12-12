@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="LSPDFRReborn.cs" />
+    <Compile Include="PoliceBackup\PoliceBackup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PedastrianStop\PedastrianStop.cs" />
     <Compile Include="Util\Processing\IProcessing.cs" />

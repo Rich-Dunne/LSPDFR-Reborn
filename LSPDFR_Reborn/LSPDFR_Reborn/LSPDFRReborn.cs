@@ -26,6 +26,7 @@ namespace LSPDFR_Reborn
             Functions.OnOnDutyStateChanged += OnOnDutyStateChangedHandler;
 
             ProcessingPool.RegisterProcess(new PedastrianStop());
+            ProcessingPool.RegisterProcess(new PoliceBackup.PoliceBackup());
             ProcessingPool.CanRegister = false;
         }
 
