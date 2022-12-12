@@ -34,8 +34,6 @@ If you would like to contribute to this project, please read [CONTRIBUTING.md](C
 
 This project is licensed under the [GNU License](LICENSE)
 
-
 ## Acknowledgments
 
 * [Rage Community Library](https://github.com/Rich-Dunne/rage-community-library)
-

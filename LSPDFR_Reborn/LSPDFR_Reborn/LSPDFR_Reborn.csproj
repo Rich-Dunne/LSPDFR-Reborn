@@ -55,10 +55,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration\Configuration.cs" />
     <Compile Include="LSPDFRReborn.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PedastrianStop\PedastrianStop.cs" />
+    <Compile Include="Util\Processing\IProcessing.cs" />
+    <Compile Include="Util\PedExtensions.cs" />
+    <Compile Include="Util\Processing\Process.cs" />
+    <Compile Include="Util\Processing\ProcessingPool.cs" />
+    <Compile Include="Util\VehicleExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Configuration\Reborn.ini" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
