@@ -10,22 +10,22 @@ namespace LSPDFR_Reborn.Util.Processing
     internal class ProcessingPool
     {
 
-        private static List<IProcessing> _processes = new List<IProcessing>(); 
+        private static List<IProcessing> s_processes = new List<IProcessing>(); 
         public static void RegisterProcess(IProcessing process)
         {
-            if (!_processes.Contains(process) && _canRegister)
+            if (!_processes.Contains(process) && s_canRegister)
             {
-                _processes.Add(process);
+                s_processes.Add(process);
             }
         }
 
-        private static bool _canRegister = true;
+        private static bool s_canRegister = true;
         public static bool CanRegister
         {
             get { return _canRegister; }
             set
             {
-                _canRegister = value;
+                s_canRegister = value;
             }
         }
 
@@ -36,7 +36,7 @@ namespace LSPDFR_Reborn.Util.Processing
 
         public static void StartProcesses()
         {
-            foreach(var process in _processes)
+            foreach(var process in s_processes)
             {
                 process.Start();
             }
@@ -44,7 +44,7 @@ namespace LSPDFR_Reborn.Util.Processing
 
         public static void UpdateProcesses()
         {
-            foreach (var process in _processes)
+            foreach (var process in s_processes)
             {
                 process.Update();
             }
@@ -52,7 +52,7 @@ namespace LSPDFR_Reborn.Util.Processing
 
         public static void StopProcesses()
         {
-            foreach (var process in _processes)
+            foreach (var process in s_processes)
             {
                 process.Finally();
             }
