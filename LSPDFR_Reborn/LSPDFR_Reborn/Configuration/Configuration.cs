@@ -9,7 +9,7 @@ namespace LSPDFR_Reborn.Configuration
 {
     internal class Configuration
     {
-        private static InitializationFile _configurationSettings = new InitializationFile("Plugins/LSPDFR/LSPDFRReborn/Reborn.ini");
+        private static InitializationFile s_configurationSettings = new InitializationFile("Plugins/LSPDFR/LSPDFRReborn/Reborn.ini");
 
         /// <summary>
         /// Initializes the <b>Configuration File</b>.<br></br><br></br> This always <b>needs</b> to be called before accessing
@@ -28,7 +28,7 @@ namespace LSPDFR_Reborn.Configuration
         /// <param name="newValue">The value which will be overwritten. Example: Key = <b>F7</b> (value)</param>
         public static void Write(string sectionName, string name, string newValue)
         {
-            _configurationSettings.Write(sectionName, name, newValue);
+            s_configurationSettings.Write(sectionName, name, newValue);
         }
 
     }
