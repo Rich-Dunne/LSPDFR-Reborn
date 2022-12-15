@@ -37,7 +37,7 @@ namespace LSPDFR_Reborn
                 // Going on duty
                 ProcessingPool.StartProcesses();
 
-                Game.DisplayNotification("LSPDFRReborn started (DEV) " + _version.ToString());
+                Game.DisplayNotification("LSPDFRReborn started (DEV) " + s_version.ToString());
                 //Game.DisplayNotification("web_lossantospolicedept", "web_lossantospolicedept", "LSPD:FR Reborn", $"~y~{s_version.ToString()} by VELRX-Team.", "Thanks for using.");
 
             } 
@@ -60,7 +60,7 @@ namespace LSPDFR_Reborn
                     GameFiber.Sleep(1);
                 }
             });
-            _onDuty = OnDuty;
+            s_onDuty = OnDuty;
         }
 
         // Called when the plug-in is being shut off (LSPDFR unloaded)
