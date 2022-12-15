@@ -22,7 +22,7 @@ namespace LSPDFR_Reborn.Util.Processing
         private static bool s_canRegister = true;
         public static bool CanRegister
         {
-            get { return _canRegister; }
+            get { return s_canRegister; }
             set
             {
                 s_canRegister = value;
@@ -31,7 +31,7 @@ namespace LSPDFR_Reborn.Util.Processing
 
         public static void RemoveProcess(IProcessing process)
         {
-            _processes.Remove(process);
+            s_processes.Remove(process);
         }
 
         public static void StartProcesses()
