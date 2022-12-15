@@ -13,7 +13,7 @@ namespace LSPDFR_Reborn.Util.Processing
         private static List<IProcessing> s_processes = new List<IProcessing>(); 
         public static void RegisterProcess(IProcessing process)
         {
-            if (!s_processes.Contains(process) && s_canRegister)
+            if (!_processes.Contains(process) && s_canRegister)
             {
                 s_processes.Add(process);
             }
