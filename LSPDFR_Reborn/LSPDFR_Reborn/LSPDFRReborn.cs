@@ -1,5 +1,6 @@
 ﻿using LSPD_First_Response.Mod.API;
 using LSPDFR_Reborn.StopTheCivilian;
+using LSPDFR_Reborn.Backup;
 using LSPDFR_Reborn.Util.Processing;
 using Rage;
 using System;
@@ -26,7 +27,7 @@ namespace LSPDFR_Reborn
             Functions.OnOnDutyStateChanged += OnOnDutyStateChangedHandler;
 
             ProcessingPool.RegisterProcess(new PedastrianStop());
-            ProcessingPool.RegisterProcess(new PoliceBackup.PoliceBackup());
+            ProcessingPool.RegisterProcess(new Backup.Backup());
             ProcessingPool.CanRegister = false;
         }
 

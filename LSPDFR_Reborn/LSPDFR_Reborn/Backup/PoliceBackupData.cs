@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace LSPDFR_Reborn.PoliceBackup
+namespace LSPDFR_Reborn.Backup
 {
     [XmlRoot(ElementName = "Vehicle")]
     public class Vehicle
@@ -28,6 +28,8 @@ namespace LSPDFR_Reborn.PoliceBackup
         public string Chance { get; set; }
         [XmlAttribute(AttributeName = "comp_beard")]
         public string Comp_beard { get; set; }
+        [XmlAttribute(AttributeName = "comp_decals")]
+        public string Comp_decals { get; set; }
         [XmlAttribute(AttributeName = "comp_shirt")]
         public string Comp_shirt { get; set; }
         [XmlAttribute(AttributeName = "tex_shit")]

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <PoliceBackupUnits>
 	<PoliceBackupUnit name="Gang Unit" code2="True" code3="True" pursuit="True" traffic_stop="True" felony_stop="True">
 		<LSCity>
@@ -9,7 +9,8 @@
 				</Vehicles>
 				<Peds>
 					<Ped chance="50" comp_beard="122" comp_shirt="31" tex_shit="1" comp_pants="130" tex_pants="7" comp_hands="69" comp_shoes="52" comp_eyes="2" comp_accessories="114" tex_accessories="1" comp_tasks="8" tex_tasks="1" comp_shirtoverlay="209" tex_shirtoverlay="15" prop_hats="136" tex_hats="1">mp_m_freemode_01</Ped>
-					<Ped chance="50" comp_beard="122" comp_shirt="45" tex_shirt="1" comp_pants="136" tex_pants="7" comp_hands="69" comp_shoes="56" comp_eyes="2" comp_accessories="80" tex_accessories="1" comp_tasks="8" tex_tasks="1"  comp_shirtoverlay="225" tex_shirtoverlay="1" prop_hats="135" tex_hats="1">mp_f_freemode_01</Ped>
+					<Ped chance="75" comp_beard="122" comp_shirt="45" tex_shirt="1" comp_pants="136" tex_pants="7" comp_hands="69" comp_shoes="56" comp_eyes="2" comp_accessories="80" tex_accessories="1" comp_tasks="8" tex_tasks="1"  comp_shirtoverlay="225" tex_shirtoverlay="1" prop_hats="135" tex_hats="1">mp_f_freemode_01</Ped>
+					<Ped chance="25" comp_beard="122" comp_shirt="45" tex_shirt="1" comp_pants="136" tex_pants="7" comp_hands="69" comp_shoes="56" comp_eyes="2" comp_accessories="80" tex_accessories="1" comp_tasks="8" tex_tasks="1"  comp_shirtoverlay="225" tex_shirtoverlay="1" prop_hats="135" tex_hats="1">mp_m_freemode_01</Ped>
 				</Peds>
 				<Weapons>
 					<NonLethals>
@@ -127,130 +128,56 @@
 			</VehicleSet>
 		</CP>
 	</PoliceBackupUnit>
-	<PoliceBackupUnit name="Gang Unit 2" code2="True" code3="True" pursuit="True" traffic_stop="True" felony_stop="True">
+	
+	<PoliceBackupUnit name="Police Bike" code2="True" code3="True" pursuit="True" traffic_stop="False" felony_stop="True">
 		<LSCity>
-			<VehicleSet spawn_distance="250">
+			<VehicleSet spawn_distance="150">
 				<Vehicles>
-					<Vehicle color="black">FBI</Vehicle>
-					<Vehicle color="black">FBI2</Vehicle>
+					<Vehicle>POLICEB</Vehicle>
 				</Vehicles>
 				<Peds>
-					<Ped chance="50" comp_beard="122" comp_shirt="31" tex_shit="1" comp_pants="130" tex_pants="7" comp_hands="69" comp_shoes="52" comp_eyes="2" comp_accessories="114" tex_accessories="1" comp_tasks="8" tex_tasks="1" comp_shirtoverlay="209" tex_shirtoverlay="15" prop_hats="136" tex_hats="1">mp_m_freemode_01</Ped>
-					<Ped chance="50" comp_beard="122" comp_shirt="45" tex_shirt="1" comp_pants="136" tex_pants="7" comp_hands="69" comp_shoes="56" comp_eyes="2" comp_accessories="80" tex_accessories="1" comp_tasks="8" tex_tasks="1"  comp_shirtoverlay="225" tex_shirtoverlay="1" prop_hats="135" tex_hats="1">mp_f_freemode_01</Ped>
+					<Ped comp_shirt="2" comp_pants="1" comp_decals="2" prop_glasses="1" tex_glasses="1" prop_hats="1">S_M_Y_HWAYCOP_01</Ped>
 				</Peds>
-				<Weapons>
-					<NonLethals>
-						<NonLethal>WEAPON_STUNGUN</NonLethal>
-						<NonLethal>WEAPON_NIGHTSTICK</NonLethal>
-					</NonLethals>
-					<HandGuns>
-						<HandGun chance="100" comp_1="COMPONENT_AT_PI_FLSH">WEAON_COMBATPISTOL</HandGun>
-					</HandGuns>
-					<LongGuns>
-						<LongGun chance="50" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_CARBINERIFLE</LongGun>
-						<LongGun chance="50" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_PUMPSHOTGUN</LongGun>
-					</LongGuns>
-				</Weapons>
 			</VehicleSet>
 		</LSCity>
 		<LSCounty>
-			<VehicleSet spawn_distance="250">
+			<VehicleSet spawn_distance="150">
 				<Vehicles>
-					<Vehicle color="black">FBI</Vehicle>
-					<Vehicle color="black">FBI2</Vehicle>
+					<Vehicle>POLICEB</Vehicle>
 				</Vehicles>
 				<Peds>
-					<Ped chance="50" comp_beard="122" comp_shirt="31" tex_shirt="1" comp_pants="130" tex_pants="7" comp_hands="69" comp_shoes="64" tex_shoes="5" comp_eyes="2" comp_accessories="134" tex_accessories="4" comp_tasks="24" tex_tasks="2" comp_shirtoverlay="74" tex_shirtoverlay="19" prop_hats="136" tex_hats="23">mp_m_freemode_01</Ped>
-					<Ped chance="50" comp_beard="122" comp_shirt="45" tex_shirt="1" comp_pants="136" tex_pants="7" comp_hands="69" comp_shoes="56" comp_eyes="2" comp_accessories="82" tex_accessories="2" comp_tasks="30" tex_tasks="5"  comp_shirtoverlay="86" tex_shirtoverlay="1" prop_hats="135" tex_hats="23">mp_f_freemode_01</Ped>
+					<Ped comp_shirt="2" comp_pants="1" comp_decals="2" prop_glasses="2" tex_glasses="1" prop_hats="1">S_M_Y_HWAYCOP_01</Ped>
 				</Peds>
-				<Weapons>
-					<NonLethals>
-						<NonLethal>WEAPON_STUNGUN</NonLethal>
-						<NonLethal>WEAPON_NIGHTSTICK</NonLethal>
-					</NonLethals>
-					<HandGuns>
-						<HandGun chance="100" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_COMBATPISTOL</HandGun>
-					</HandGuns>
-					<LongGuns>
-						<LongGun chance="50" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_CARBINERIFLE</LongGun>
-						<LongGun chance="50" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_PUMPSHOTGUN</LongGun>
-					</LongGuns>
-				</Weapons>
 			</VehicleSet>
 		</LSCounty>
 		<BCounty>
-			<VehicleSet spawn_distance="250">
+			<VehicleSet spawn_distance="150">
 				<Vehicles>
-					<Vehicle color="black">FBI</Vehicle>
-					<Vehicle color="black">FBI2</Vehicle>
+					<Vehicle>POLICEB</Vehicle>
 				</Vehicles>
 				<Peds>
-					<Ped chance="50" comp_beard="122" comp_shirt="31" tex_shirt="1" comp_pants="130" tex_pants="7" comp_hands="69" comp_shoes="64" tex_shoes="5" comp_eyes="2" comp_accessories="116" tex_accessories="1" comp_tasks="28" tex_tasks="5" comp_shirtoverlay="74" tex_shirtoverlay="19" prop_hats="136" tex_hats="24">mp_m_freemode_01</Ped>
-					<Ped chance="50" comp_beard="122" comp_shirt="45" tex_shirt="1" comp_pants="136" tex_pants="7" comp_hands="69" comp_shoes="37" comp_eyes="9" comp_accessories="82" tex_accessories="1" comp_tasks="30" tex_tasks="5" comp_shirtoverlay="225" tex_shirtoverlay="2" prop_hats="135" tex_hats="24">mp_f_freemode_01</Ped>
+					<Ped comp_shirt="2" comp_pants="1" comp_decals="2" prop_glasses="2" tex_glasses="1" prop_hats="1">S_M_Y_HWAYCOP_01</Ped>
 				</Peds>
-				<Weapons>
-					<NonLethals>
-						<NonLethal>WEAPON_STUNGUN</NonLethal>
-						<NonLethal>WEAPON_NIGHTSTICK</NonLethal>
-					</NonLethals>
-					<HandGuns>
-						<HandGun chance="100" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_COMBATPISTOL</HandGun>
-					</HandGuns>
-					<LongGuns>
-						<LongGun chance="50" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_CARBINERIFLE</LongGun>
-						<LongGun chance="50" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_PUMPSHOTGUN</LongGun>
-					</LongGuns>
-				</Weapons>
 			</VehicleSet>
 		</BCounty>
 		<NY>
-			<VehicleSet spawn_distance="250">
+			<VehicleSet spawn_distance="150">
 				<Vehicles>
-					<Vehicle color="black">FBI</Vehicle>
-					<Vehicle color="black">FBI2</Vehicle>
+					<Vehicle>POLICEB</Vehicle>
 				</Vehicles>
 				<Peds>
-					<Ped chance="50" comp_shirt="45" comp_pants="34" tex_pants="1" comp_hands="49" tex_hands="1" comp_shoes="53" comp_accessories="16" tex_accessories="1" comp_tasks="27" tex_tasks="6" comp_shirtoverlay="17" tex_shirtoverlay="1" prop_hats="9" tex_hats="3">mp_m_freemode_01</Ped>
-					<Ped chance="50" comp_shirt="50" comp_pants="33" tex_pants="1" comp_shoes="54" comp_accessories="15" tex_accessories="1" comp_tasks="29" tex_tasks="6" comp_shirtoverlay="45" tex_shirtoverlay="1" prop_hats="9" tex_hats="3">mp_f_freemode_01</Ped>
+					<Ped comp_shirt="2" comp_pants="1" comp_decals="2" prop_glasses="2" tex_glasses="1" prop_hats="1">S_M_Y_HWAYCOP_01</Ped>
 				</Peds>
-				<Weapons>
-					<NonLethals>
-						<NonLethal>WEAPON_STUNGUN</NonLethal>
-						<NonLethal>WEAPON_NIGHTSTICK</NonLethal>
-					</NonLethals>
-					<HandGuns>
-						<HandGun chance="100" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_COMBATPISTOL</HandGun>
-					</HandGuns>
-					<LongGuns>
-						<LongGun chance="50" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_CARBINERIFLE</LongGun>
-						<LongGun chance="50" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_PUMPSHOTGUN</LongGun>
-					</LongGuns>
-				</Weapons>
 			</VehicleSet>
 		</NY>
 		<CP>
-			<VehicleSet spawn_distance="250">
+			<VehicleSet spawn_distance="150">
 				<Vehicles>
-					<Vehicle color="black">FBI</Vehicle>
-					<Vehicle color="black">FBI2</Vehicle>
+					<Vehicle>POLICEB</Vehicle>
 				</Vehicles>
 				<Peds>
-					<Ped chance="50" comp_beard="122" comp_shirt="31" tex_shirt="1" comp_pants="130" tex_pants="7" comp_hands="69" comp_shoes="52" comp_eyes="2" comp_accessories="114" tex_accessories="1" comp_tasks="8" tex_tasks="1" comp_shirtoverlay="209" tex_shirtoverlay="15" prop_hats="136" tex_hats="1">mp_m_freemode_01</Ped>
-					<Ped chance="50" comp_beard="122" comp_shirt="45" tex_shirt="1" comp_pants="136" tex_pants="7" comp_hands="69" comp_shoes="56" comp_eyes="2" comp_accessories="80" tex_accessories="1" comp_tasks="8" tex_tasks="1"  comp_shirtoverlay="225" tex_shirtoverlay="1" prop_hats="135" tex_hats="1">mp_f_freemode_01</Ped>
+					<Ped comp_shirt="2" comp_pants="1" comp_decals="2" prop_glasses="2" tex_glasses="1" prop_hats="1">S_M_Y_HWAYCOP_01</Ped>
 				</Peds>
-				<Weapons>
-					<NonLethals>
-						<NonLethal>WEAPON_STUNGUN</NonLethal>
-						<NonLethal>WEAPON_NIGHTSTICK</NonLethal>
-					</NonLethals>
-					<HandGuns>
-						<HandGun chance="100" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_COMBATPISTOL</HandGun>
-					</HandGuns>
-					<LongGuns>
-						<LongGun chance="50" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_CARBINERIFLE</LongGun>
-						<LongGun chance="50" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_PUMPSHOTGUN</LongGun>
-					</LongGuns>
-				</Weapons>
 			</VehicleSet>
 		</CP>
 	</PoliceBackupUnit>
