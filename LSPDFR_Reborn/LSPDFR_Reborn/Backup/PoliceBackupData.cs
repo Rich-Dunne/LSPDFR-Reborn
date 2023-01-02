@@ -24,50 +24,115 @@ namespace LSPDFR_Reborn.Backup
     [XmlRoot(ElementName = "Ped")]
     public class Ped
     {
+        // Chance
         [XmlAttribute(AttributeName = "chance")]
         public string Chance { get; set; }
+
+
+        // Components
+        [XmlAttribute(AttributeName = "comp_face")]
+        public string Comp_face { get; set; }
+
+        [XmlAttribute(AttributeName = "comp_hair")]
+        public string Comp_hair { get; set; }
+
         [XmlAttribute(AttributeName = "comp_beard")]
         public string Comp_beard { get; set; }
+
         [XmlAttribute(AttributeName = "comp_decals")]
         public string Comp_decals { get; set; }
+
         [XmlAttribute(AttributeName = "comp_shirt")]
         public string Comp_shirt { get; set; }
-        [XmlAttribute(AttributeName = "tex_shit")]
-        public string Tex_shit { get; set; }
+
         [XmlAttribute(AttributeName = "comp_pants")]
         public string Comp_pants { get; set; }
-        [XmlAttribute(AttributeName = "tex_pants")]
-        public string Tex_pants { get; set; }
+
         [XmlAttribute(AttributeName = "comp_hands")]
         public string Comp_hands { get; set; }
+
         [XmlAttribute(AttributeName = "comp_shoes")]
         public string Comp_shoes { get; set; }
+
         [XmlAttribute(AttributeName = "comp_eyes")]
         public string Comp_eyes { get; set; }
+
         [XmlAttribute(AttributeName = "comp_accessories")]
         public string Comp_accessories { get; set; }
-        [XmlAttribute(AttributeName = "tex_accessories")]
-        public string Tex_accessories { get; set; }
+
         [XmlAttribute(AttributeName = "comp_tasks")]
         public string Comp_tasks { get; set; }
-        [XmlAttribute(AttributeName = "tex_tasks")]
-        public string Tex_tasks { get; set; }
+
         [XmlAttribute(AttributeName = "comp_shirtoverlay")]
         public string Comp_shirtoverlay { get; set; }
+
+
+        // Textures
+        [XmlAttribute(AttributeName = "tex_face")]
+        public string Tex_face { get; set; }
+
+        [XmlAttribute(AttributeName = "tex_decals")]
+        public string Tex_decals { get; set; }
+
+        [XmlAttribute(AttributeName = "tex_tasks")]
+        public string Tex_tasks { get; set; }
+
         [XmlAttribute(AttributeName = "tex_shirtoverlay")]
         public string Tex_shirtoverlay { get; set; }
-        [XmlAttribute(AttributeName = "prop_hats")]
-        public string Prop_hats { get; set; }
+
         [XmlAttribute(AttributeName = "tex_hats")]
         public string Tex_hats { get; set; }
-        [XmlText]
-        public string Text { get; set; }
-        [XmlAttribute(AttributeName = "tex_shirt")]
-        public string Tex_shirt { get; set; }
+
         [XmlAttribute(AttributeName = "tex_shoes")]
         public string Tex_shoes { get; set; }
+
         [XmlAttribute(AttributeName = "tex_hands")]
         public string Tex_hands { get; set; }
+
+        [XmlAttribute(AttributeName = "tex_glasses")]
+        public string Tex_glasses { get; set; }
+
+        [XmlAttribute(AttributeName = "tex_shirt")]
+        public string Tex_shirt { get; set; }
+
+        [XmlAttribute(AttributeName = "tex_pants")]
+        public string Tex_pants { get; set; }
+        [XmlAttribute(AttributeName = "tex_accessories")]
+        public string Tex_accessories { get; set; }
+
+        [XmlAttribute(AttributeName = "tex_ears")]
+        public string Tex_ears { get; set; }
+
+        [XmlAttribute(AttributeName = "tex_beard")]
+        public string Tex_beard { get; set; }
+
+        [XmlAttribute(AttributeName = "tex_eyes")]
+        public string Tex_eyes { get; set; }
+
+        [XmlAttribute(AttributeName = "tex_watches")]
+        public string Tex_watches { get; set; }
+
+        [XmlAttribute(AttributeName = "tex_hair")]
+        public string Tex_hair { get; set; }
+
+
+        // Props
+        [XmlAttribute(AttributeName = "prop_hats")]
+        public string Prop_hats { get; set; }
+
+        [XmlAttribute(AttributeName = "prop_ears")]
+        public string Prop_ears { get; set; }
+
+        [XmlAttribute(AttributeName = "prop_watches")]
+        public string Prop_watches { get; set; }
+
+        [XmlAttribute(AttributeName = "prop_glasses")]
+        public string Prop_glasses { get; set; }
+
+
+        // Model
+        [XmlText]
+        public string Model { get; set; }
     }
 
     [XmlRoot(ElementName = "Peds")]
@@ -77,11 +142,18 @@ namespace LSPDFR_Reborn.Backup
         public List<Ped> Ped { get; set; }
     }
 
+    [XmlRoot(ElementName = "NonLethal")]
+    public class NonLethal
+    {
+        [XmlText]
+        public string Text { get; set; }
+    }
+
     [XmlRoot(ElementName = "NonLethals")]
     public class NonLethals
     {
         [XmlElement(ElementName = "NonLethal")]
-        public List<string> NonLethal { get; set; }
+        public List<NonLethal> NonLethal { get; set; }
     }
 
     [XmlRoot(ElementName = "HandGun")]
@@ -99,7 +171,7 @@ namespace LSPDFR_Reborn.Backup
     public class HandGuns
     {
         [XmlElement(ElementName = "HandGun")]
-        public HandGun HandGun { get; set; }
+        public List<HandGun> HandGun { get; set; }
     }
 
     [XmlRoot(ElementName = "LongGun")]

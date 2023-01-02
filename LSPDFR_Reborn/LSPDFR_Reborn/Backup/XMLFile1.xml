@@ -1,5 +1,139 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <PoliceBackupUnits>
+	<PoliceBackupUnit name="Local Patrol" code2="True" code3="True" pursuit="True" traffic_stop="True" felony_stop="True">
+		<LSCity>
+			<VehicleSet spawn_distance="250">
+				<Vehicles>
+					<Vehicle>POLICE</Vehicle>
+					<Vehicle>POLICE2</Vehicle>
+					<Vehicle>POLICE3</Vehicle>
+				</Vehicles>
+				<Peds>
+					<Ped chance="25" comp_shirt="2" comp_accessories="2" prop_hats="1" prop_glasses="4">S_M_Y_COP_01</Ped>
+					<Ped chance="5" comp_shirt="2" comp_accessories="2" prop_hats="0">S_F_Y_COP_01</Ped>
+				</Peds>
+				<Weapons>
+					<NonLethals>
+						<NonLethal>WEAPON_STUNGUN</NonLethal>
+						<NonLethal>WEAPON_NIGHTSTICK</NonLethal>
+					</NonLethals>
+					<HandGuns>
+						<HandGun chance="90" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_PISTOL</HandGun>
+						<HandGun chance="10" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_COMBATPISTOL</HandGun>
+					</HandGuns>
+					<LongGuns>
+						<LongGun chance="67" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_CARBINERIFLE</LongGun>
+						<LongGun chance="33" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_PUMPSHOTGUN</LongGun>
+					</LongGuns>
+				</Weapons>
+			</VehicleSet>
+		</LSCity>
+		<LSCounty>
+			<VehicleSet spawn_distance="250">
+				<Vehicles>
+					<Vehicle>SHERIFF</Vehicle>
+					<Vehicle>SHERIFF2</Vehicle>
+				</Vehicles>
+				<Peds>
+					<Ped chance="90" comp_shirt="2" prop_hats="1" prop_glasses="2">S_M_Y_SHERIFF_01</Ped>
+					<Ped chance="10" comp_shirt="2" prop_hats="1">S_F_Y_SHERIFF_01</Ped>
+				</Peds>
+				<Weapons>
+					<NonLethals>
+						<NonLethal>WEAPON_STUNGUN</NonLethal>
+						<NonLethal>WEAPON_NIGHTSTICK</NonLethal>
+					</NonLethals>
+					<HandGuns>
+						<HandGun chance="90" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_PISTOL</HandGun>
+						<HandGun chance="10" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_COMBATPISTOL</HandGun>
+					</HandGuns>
+					<LongGuns>
+						<LongGun chance="67" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_CARBINERIFLE</LongGun>
+						<LongGun chance="33" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_PUMPSHOTGUN</LongGun>
+					</LongGuns>
+				</Weapons>
+			</VehicleSet>
+		</LSCounty>
+		<BCounty>
+			<VehicleSet spawn_distance="250">
+				<Vehicles>
+					<Vehicle>SHERIFF</Vehicle>
+					<Vehicle>SHERIFF2</Vehicle>
+				</Vehicles>
+				<Peds>
+					<Ped chance="90" comp_shirt="2" prop_hats="1" prop_glasses="2">S_M_Y_SHERIFF_01</Ped>
+					<Ped chance="10" comp_shirt="2" prop_hats="1">S_F_Y_SHERIFF_01</Ped>
+				</Peds>
+				<Weapons>
+					<NonLethals>
+						<NonLethal>WEAPON_STUNGUN</NonLethal>
+						<NonLethal>WEAPON_NIGHTSTICK</NonLethal>
+					</NonLethals>
+					<HandGuns>
+						<HandGun chance="90" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_PISTOL</HandGun>
+						<HandGun chance="10" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_COMBATPISTOL</HandGun>
+					</HandGuns>
+					<LongGuns>
+						<LongGun chance="67" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_CARBINERIFLE</LongGun>
+						<LongGun chance="33" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_PUMPSHOTGUN</LongGun>
+					</LongGuns>
+				</Weapons>
+			</VehicleSet>
+		</BCounty>
+		<NY>
+			<VehicleSet spawn_distance="250">
+				<Vehicles>
+					<Vehicle>POLICEOLD1</Vehicle>
+					<Vehicle>POLICEOLD2</Vehicle>
+				</Vehicles>
+				<Peds>
+					<Ped chance="60" comp_accessories="1" prop_glasses="1" prop_hats="1">S_M_M_SNOWCOP_01</Ped>
+					<Ped chance="40" prop_glasses="2" prop_hats="2">S_M_M_SNOWCOP_01</Ped>
+				</Peds>
+				<Weapons>
+					<NonLethals>
+						<NonLethal>WEAPON_STUNGUN</NonLethal>
+						<NonLethal>WEAPON_NIGHTSTICK</NonLethal>
+					</NonLethals>
+					<HandGuns>
+						<HandGun chance="90" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_PISTOL</HandGun>
+						<HandGun chance="10" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_COMBATPISTOL</HandGun>
+					</HandGuns>
+					<LongGuns>
+						<LongGun chance="67" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_CARBINERIFLE</LongGun>
+						<LongGun chance="33" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_PUMPSHOTGUN</LongGun>
+					</LongGuns>
+				</Weapons>
+			</VehicleSet>
+		</NY>
+		<CP>
+			<VehicleSet spawn_distance="250">
+				<Vehicles>
+					<Vehicle>SHERIFF</Vehicle>
+					<Vehicle>SHERIFF2</Vehicle>
+				</Vehicles>
+				<Peds>
+					<Ped chance="90" comp_shirt="2" prop_hats="1" prop_glasses="2">S_M_Y_SHERIFF_01</Ped>
+					<Ped chance="10" comp_shirt="2" prop_hats="1">S_F_Y_SHERIFF_01</Ped>
+				</Peds>
+				<Weapons>
+					<NonLethals>
+						<NonLethal>WEAPON_STUNGUN</NonLethal>
+						<NonLethal>WEAPON_NIGHTSTICK</NonLethal>
+					</NonLethals>
+					<HandGuns>
+						<HandGun chance="90" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_PISTOL</HandGun>
+						<HandGun chance="10" comp_1="COMPONENT_AT_PI_FLSH">WEAPON_COMBATPISTOL</HandGun>
+					</HandGuns>
+					<LongGuns>
+						<LongGun chance="67" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_CARBINERIFLE</LongGun>
+						<LongGun chance="33" comp_1="COMPONENT_AT_AR_FLSH">WEAPON_PUMPSHOTGUN</LongGun>
+					</LongGuns>
+				</Weapons>
+			</VehicleSet>
+		</CP>
+	</PoliceBackupUnit>
+
 	<PoliceBackupUnit name="Gang Unit" code2="True" code3="True" pursuit="True" traffic_stop="True" felony_stop="True">
 		<LSCity>
 			<VehicleSet spawn_distance="250">
@@ -136,7 +270,7 @@
 					<Vehicle>POLICEB</Vehicle>
 				</Vehicles>
 				<Peds>
-					<Ped comp_shirt="2" comp_pants="1" comp_decals="2" prop_glasses="1" tex_glasses="1" prop_hats="1">S_M_Y_HWAYCOP_01</Ped>
+					<Ped comp_shirt="1" comp_pants="0" comp_decals="1" comp_tasks="1" prop_glasses="1" tex_glasses="1" prop_hats="0">S_M_Y_HWAYCOP_01</Ped>
 				</Peds>
 			</VehicleSet>
 		</LSCity>
