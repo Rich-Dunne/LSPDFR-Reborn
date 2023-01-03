@@ -88,7 +88,10 @@ namespace LSPDFR_Reborn.Backup
                         string _colorString = string.Empty;
                         string _vehicleName = string.Empty;
                         _chooseVehicle(_code3Unit.LSCity.VehicleSet.Vehicles, out _colorString, out _vehicleName);
-                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, World.GetNextPositionOnStreet(_player.Position.Around(float.Parse(_code3Unit.LSCity.VehicleSet.Spawn_distance, System.Globalization.CultureInfo.InvariantCulture.NumberFormat))), 0f);
+                        Vector3 _spawnCoords = World.GetNextPositionOnStreet(_player.Position.Around2D(int.Parse(_code3Unit.LSCity.VehicleSet.Spawn_distance)));
+                        NativeFunction.Natives.GET_POSITION_BY_SIDE_OF_ROAD<bool>(_spawnCoords, 0, out Vector3 _outPosition);
+                        NativeFunction.Natives.GET_CLOSEST_VEHICLE_NODE_WITH_HEADING(_spawnCoords, out Vector3 _, out float _heading, 1, 3.0f, 0.0f);
+                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, _outPosition, _heading);
                         if (_colorString != string.Empty)
                         {
                             Color _vehicleColor = Color.FromName(_colorString);
@@ -103,17 +106,24 @@ namespace LSPDFR_Reborn.Backup
                             Game.LogTrivial(_ped.Model);
                             Rage.Ped _code3UnitPed = new Rage.Ped(_ped.Model, _unitVehicle.Position, 0);
                             Functions.SetPedAsCop(_code3UnitPed);
+                            _code3UnitPed.RelationshipGroup = "COP";
                             _setPedVariation(_ped, _code3UnitPed);
                             _setPedProps(_ped, _code3UnitPed);
                             _setPedWeapons(_code3Unit.LSCity.VehicleSet.Weapons, _code3UnitPed);
+                            int _freeSeatInVehicle = (int)_unitVehicle.GetFreeSeatIndex();
+                            _code3UnitPed.WarpIntoVehicle(_unitVehicle, _freeSeatInVehicle);
                         }
+                        _unitVehicle.Driver.Tasks.DriveToPosition(_player.Position, 120f, VehicleDrivingFlags.AllowWrongWay | VehicleDrivingFlags.DriveAroundObjects | VehicleDrivingFlags.DriveAroundPeds | VehicleDrivingFlags.DriveAroundVehicles | VehicleDrivingFlags.Emergency);
                     }
                     else if (_playerZone.County.Equals(EWorldZoneCounty.LosSantosCounty))
                     {
                         string _colorString = string.Empty;
                         string _vehicleName = string.Empty;
                         _chooseVehicle(_code3Unit.LSCounty.VehicleSet.Vehicles, out _colorString, out _vehicleName);
-                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, World.GetNextPositionOnStreet(_player.Position.Around(float.Parse(_code3Unit.LSCounty.VehicleSet.Spawn_distance, System.Globalization.CultureInfo.InvariantCulture.NumberFormat))), 0f);
+                        Vector3 _spawnCoords = World.GetNextPositionOnStreet(_player.Position.Around2D(int.Parse(_code3Unit.LSCounty.VehicleSet.Spawn_distance)));
+                        NativeFunction.Natives.GET_POSITION_BY_SIDE_OF_ROAD<bool>(_spawnCoords, 0, out Vector3 _outPosition);
+                        NativeFunction.Natives.GET_CLOSEST_VEHICLE_NODE_WITH_HEADING(_spawnCoords, out Vector3 _, out float _heading, 1, 3.0f, 0.0f);
+                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, _outPosition, _heading);
                         if (_colorString != string.Empty)
                         {
                             Color _vehicleColor = Color.FromName(_colorString);
@@ -137,7 +147,10 @@ namespace LSPDFR_Reborn.Backup
                         string _colorString = string.Empty;
                         string _vehicleName = string.Empty;
                         _chooseVehicle(_code3Unit.BCounty.VehicleSet.Vehicles, out _colorString, out _vehicleName);
-                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, World.GetNextPositionOnStreet(_player.Position.Around(float.Parse(_code3Unit.BCounty.VehicleSet.Spawn_distance, System.Globalization.CultureInfo.InvariantCulture.NumberFormat))), 0f);
+                        Vector3 _spawnCoords = World.GetNextPositionOnStreet(_player.Position.Around2D(int.Parse(_code3Unit.BCounty.VehicleSet.Spawn_distance)));
+                        NativeFunction.Natives.GET_POSITION_BY_SIDE_OF_ROAD<bool>(_spawnCoords, 0, out Vector3 _outPosition);
+                        NativeFunction.Natives.GET_CLOSEST_VEHICLE_NODE_WITH_HEADING(_spawnCoords, out Vector3 _, out float _heading, 1, 3.0f, 0.0f);
+                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, _outPosition, _heading);
                         if (_colorString != string.Empty)
                         {
                             Color _vehicleColor = Color.FromName(_colorString);
@@ -161,8 +174,10 @@ namespace LSPDFR_Reborn.Backup
                         string _colorString = string.Empty;
                         string _vehicleName = string.Empty;
                         _chooseVehicle(_code3Unit.NY.VehicleSet.Vehicles, out _colorString, out _vehicleName);
-                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, World.GetNextPositionOnStreet(_player.Position.Around(float.Parse(_code3Unit.NY.VehicleSet.Spawn_distance, System.Globalization.CultureInfo.InvariantCulture.NumberFormat))), 0f);
-                        if (_colorString != string.Empty)
+                        Vector3 _spawnCoords = World.GetNextPositionOnStreet(_player.Position.Around2D(int.Parse(_code3Unit.NY.VehicleSet.Spawn_distance)));
+                        NativeFunction.Natives.GET_POSITION_BY_SIDE_OF_ROAD<bool>(_spawnCoords, 0, out Vector3 _outPosition);
+                        NativeFunction.Natives.GET_CLOSEST_VEHICLE_NODE_WITH_HEADING(_spawnCoords, out Vector3 _, out float _heading, 1, 3.0f, 0.0f);
+                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, _outPosition, _heading);
                         {
                             Color _vehicleColor = Color.FromName(_colorString);
                             _unitVehicle.PrimaryColor = _vehicleColor;
@@ -185,7 +200,10 @@ namespace LSPDFR_Reborn.Backup
                         string _colorString = string.Empty;
                         string _vehicleName = string.Empty;
                         _chooseVehicle(_code3Unit.CP.VehicleSet.Vehicles, out _colorString, out _vehicleName);
-                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, World.GetNextPositionOnStreet(_player.Position.Around(float.Parse(_code3Unit.CP.VehicleSet.Spawn_distance, System.Globalization.CultureInfo.InvariantCulture.NumberFormat))), 0f);
+                        Vector3 _spawnCoords = World.GetNextPositionOnStreet(_player.Position.Around2D(int.Parse(_code3Unit.CP.VehicleSet.Spawn_distance)));
+                        NativeFunction.Natives.GET_POSITION_BY_SIDE_OF_ROAD<bool>(_spawnCoords, 0, out Vector3 _outPosition);
+                        NativeFunction.Natives.GET_CLOSEST_VEHICLE_NODE_WITH_HEADING(_spawnCoords, out Vector3 _, out float _heading, 1, 3.0f, 0.0f);
+                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, _outPosition, _heading);
                         if (_colorString != string.Empty)
                         {
                             Color _vehicleColor = Color.FromName(_colorString);
@@ -211,6 +229,171 @@ namespace LSPDFR_Reborn.Backup
             foreach (PoliceBackupUnit _code2Unit in s_code2Units)
             {
                 UIMenuItem _code2UnitItem = new UIMenuItem(_code2Unit.Name, "Press Enter to request Unit.");
+                _code2UnitItem.Activated += (s, e) =>
+                {
+                    var _playerZone = Functions.GetZoneAtPosition(_player.Position);
+                    if (_playerZone.County.Equals(EWorldZoneCounty.LosSantos))
+                    {
+                        string _colorString = string.Empty;
+                        string _vehicleName = string.Empty;
+                        _chooseVehicle(_code2Unit.LSCity.VehicleSet.Vehicles, out _colorString, out _vehicleName);
+                        Vector3 _spawnCoords = World.GetNextPositionOnStreet(_player.Position.Around2D(int.Parse(_code2Unit.LSCity.VehicleSet.Spawn_distance)));
+                        NativeFunction.Natives.GET_POSITION_BY_SIDE_OF_ROAD<bool>(_spawnCoords, 0, out Vector3 _outPosition);
+                        NativeFunction.Natives.GET_CLOSEST_VEHICLE_NODE_WITH_HEADING(_spawnCoords, out Vector3 _, out float _heading, 1, 3.0f, 0.0f);
+                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, _outPosition, _heading);
+                        if (_colorString != string.Empty)
+                        {
+                            Color _vehicleColor = Color.FromName(_colorString);
+                            _unitVehicle.PrimaryColor = _vehicleColor;
+                        }
+                        Blip _unitVehicleBlip = new Blip(_unitVehicle);
+                        _unitVehicleBlip.Color = Color.LightBlue;
+                        List<Ped> _code2UnitPeds = new List<Ped>();
+                        _choosePeds(2, _code2Unit.LSCity.VehicleSet.Peds, out _code2UnitPeds);
+                        foreach (Ped _ped in _code2UnitPeds)
+                        {
+                            Game.LogTrivial(_ped.Model);
+                            Rage.Ped _code2UnitPed = new Rage.Ped(_ped.Model, _unitVehicle.Position, 0);
+                            Functions.SetPedAsCop(_code2UnitPed);
+                            _code2UnitPed.RelationshipGroup = "COP";
+                            _setPedVariation(_ped, _code2UnitPed);
+                            _setPedProps(_ped, _code2UnitPed);
+                            _setPedWeapons(_code2Unit.LSCity.VehicleSet.Weapons, _code2UnitPed);
+                            int _freeSeatInVehicle = (int)_unitVehicle.GetFreeSeatIndex();
+                            _code2UnitPed.WarpIntoVehicle(_unitVehicle, _freeSeatInVehicle);
+                        }
+                        _unitVehicle.Driver.Tasks.DriveToPosition(_player.Position, 120f, VehicleDrivingFlags.AllowWrongWay | VehicleDrivingFlags.DriveAroundObjects | VehicleDrivingFlags.DriveAroundPeds | VehicleDrivingFlags.DriveAroundVehicles | VehicleDrivingFlags.Emergency);
+                    }
+                    if (_playerZone.County.Equals(EWorldZoneCounty.LosSantosCounty))
+                    {
+                        string _colorString = string.Empty;
+                        string _vehicleName = string.Empty;
+                        _chooseVehicle(_code2Unit.LSCounty.VehicleSet.Vehicles, out _colorString, out _vehicleName);
+                        Vector3 _spawnCoords = World.GetNextPositionOnStreet(_player.Position.Around2D(int.Parse(_code2Unit.LSCounty.VehicleSet.Spawn_distance)));
+                        NativeFunction.Natives.GET_POSITION_BY_SIDE_OF_ROAD<bool>(_spawnCoords, 0, out Vector3 _outPosition);
+                        NativeFunction.Natives.GET_CLOSEST_VEHICLE_NODE_WITH_HEADING(_spawnCoords, out Vector3 _, out float _heading, 1, 3.0f, 0.0f);
+                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, _outPosition, _heading);
+                        if (_colorString != string.Empty)
+                        {
+                            Color _vehicleColor = Color.FromName(_colorString);
+                            _unitVehicle.PrimaryColor = _vehicleColor;
+                        }
+                        Blip _unitVehicleBlip = new Blip(_unitVehicle);
+                        _unitVehicleBlip.Color = Color.LightBlue;
+                        List<Ped> _code2UnitPeds = new List<Ped>();
+                        _choosePeds(2, _code2Unit.LSCounty.VehicleSet.Peds, out _code2UnitPeds);
+                        foreach (Ped _ped in _code2UnitPeds)
+                        {
+                            Game.LogTrivial(_ped.Model);
+                            Rage.Ped _code2UnitPed = new Rage.Ped(_ped.Model, _unitVehicle.Position, 0);
+                            Functions.SetPedAsCop(_code2UnitPed);
+                            _code2UnitPed.RelationshipGroup = "COP";
+                            _setPedVariation(_ped, _code2UnitPed);
+                            _setPedProps(_ped, _code2UnitPed);
+                            _setPedWeapons(_code2Unit.LSCounty.VehicleSet.Weapons, _code2UnitPed);
+                            int _freeSeatInVehicle = (int)_unitVehicle.GetFreeSeatIndex();
+                            _code2UnitPed.WarpIntoVehicle(_unitVehicle, _freeSeatInVehicle);
+                        }
+                        _unitVehicle.Driver.Tasks.DriveToPosition(_player.Position, 120f, VehicleDrivingFlags.AllowWrongWay | VehicleDrivingFlags.DriveAroundObjects | VehicleDrivingFlags.DriveAroundPeds | VehicleDrivingFlags.DriveAroundVehicles | VehicleDrivingFlags.Emergency);
+                    }
+                    if (_playerZone.County.Equals(EWorldZoneCounty.BlaineCounty))
+                    {
+                        string _colorString = string.Empty;
+                        string _vehicleName = string.Empty;
+                        _chooseVehicle(_code2Unit.BCounty.VehicleSet.Vehicles, out _colorString, out _vehicleName);
+                        Vector3 _spawnCoords = World.GetNextPositionOnStreet(_player.Position.Around2D(int.Parse(_code2Unit.BCounty.VehicleSet.Spawn_distance)));
+                        NativeFunction.Natives.GET_POSITION_BY_SIDE_OF_ROAD<bool>(_spawnCoords, 0, out Vector3 _outPosition);
+                        NativeFunction.Natives.GET_CLOSEST_VEHICLE_NODE_WITH_HEADING(_spawnCoords, out Vector3 _, out float _heading, 1, 3.0f, 0.0f);
+                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, _outPosition, _heading);
+                        if (_colorString != string.Empty)
+                        {
+                            Color _vehicleColor = Color.FromName(_colorString);
+                            _unitVehicle.PrimaryColor = _vehicleColor;
+                        }
+                        Blip _unitVehicleBlip = new Blip(_unitVehicle);
+                        _unitVehicleBlip.Color = Color.LightBlue;
+                        List<Ped> _code2UnitPeds = new List<Ped>();
+                        _choosePeds(2, _code2Unit.BCounty.VehicleSet.Peds, out _code2UnitPeds);
+                        foreach (Ped _ped in _code2UnitPeds)
+                        {
+                            Game.LogTrivial(_ped.Model);
+                            Rage.Ped _code2UnitPed = new Rage.Ped(_ped.Model, _unitVehicle.Position, 0);
+                            Functions.SetPedAsCop(_code2UnitPed);
+                            _code2UnitPed.RelationshipGroup = "COP";
+                            _setPedVariation(_ped, _code2UnitPed);
+                            _setPedProps(_ped, _code2UnitPed);
+                            _setPedWeapons(_code2Unit.BCounty.VehicleSet.Weapons, _code2UnitPed);
+                            int _freeSeatInVehicle = (int)_unitVehicle.GetFreeSeatIndex();
+                            _code2UnitPed.WarpIntoVehicle(_unitVehicle, _freeSeatInVehicle);
+                        }
+                        _unitVehicle.Driver.Tasks.DriveToPosition(_player.Position, 120f, VehicleDrivingFlags.AllowWrongWay | VehicleDrivingFlags.DriveAroundObjects | VehicleDrivingFlags.DriveAroundPeds | VehicleDrivingFlags.DriveAroundVehicles | VehicleDrivingFlags.Emergency);
+                    }
+                    if (_playerZone.County.Equals(EWorldZoneCounty.NorthYankton))
+                    {
+                        string _colorString = string.Empty;
+                        string _vehicleName = string.Empty;
+                        _chooseVehicle(_code2Unit.NY.VehicleSet.Vehicles, out _colorString, out _vehicleName);
+                        Vector3 _spawnCoords = World.GetNextPositionOnStreet(_player.Position.Around2D(int.Parse(_code2Unit.NY.VehicleSet.Spawn_distance)));
+                        NativeFunction.Natives.GET_POSITION_BY_SIDE_OF_ROAD<bool>(_spawnCoords, 0, out Vector3 _outPosition);
+                        NativeFunction.Natives.GET_CLOSEST_VEHICLE_NODE_WITH_HEADING(_spawnCoords, out Vector3 _, out float _heading, 1, 3.0f, 0.0f);
+                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, _outPosition, _heading);
+                        if (_colorString != string.Empty)
+                        {
+                            Color _vehicleColor = Color.FromName(_colorString);
+                            _unitVehicle.PrimaryColor = _vehicleColor;
+                        }
+                        Blip _unitVehicleBlip = new Blip(_unitVehicle);
+                        _unitVehicleBlip.Color = Color.LightBlue;
+                        List<Ped> _code2UnitPeds = new List<Ped>();
+                        _choosePeds(2, _code2Unit.NY.VehicleSet.Peds, out _code2UnitPeds);
+                        foreach (Ped _ped in _code2UnitPeds)
+                        {
+                            Game.LogTrivial(_ped.Model);
+                            Rage.Ped _code2UnitPed = new Rage.Ped(_ped.Model, _unitVehicle.Position, 0);
+                            Functions.SetPedAsCop(_code2UnitPed);
+                            _code2UnitPed.RelationshipGroup = "COP";
+                            _setPedVariation(_ped, _code2UnitPed);
+                            _setPedProps(_ped, _code2UnitPed);
+                            _setPedWeapons(_code2Unit.NY.VehicleSet.Weapons, _code2UnitPed);
+                            int _freeSeatInVehicle = (int)_unitVehicle.GetFreeSeatIndex();
+                            _code2UnitPed.WarpIntoVehicle(_unitVehicle, _freeSeatInVehicle);
+                        }
+                        _unitVehicle.Driver.Tasks.DriveToPosition(_player.Position, 120f, VehicleDrivingFlags.AllowWrongWay | VehicleDrivingFlags.DriveAroundObjects | VehicleDrivingFlags.DriveAroundPeds | VehicleDrivingFlags.DriveAroundVehicles | VehicleDrivingFlags.Emergency);
+                    }
+                    if (_playerZone.County.Equals(EWorldZoneCounty.CayoPerico))
+                    {
+                        string _colorString = string.Empty;
+                        string _vehicleName = string.Empty;
+                        _chooseVehicle(_code2Unit.CP.VehicleSet.Vehicles, out _colorString, out _vehicleName);
+                        Vector3 _spawnCoords = World.GetNextPositionOnStreet(_player.Position.Around2D(int.Parse(_code2Unit.CP.VehicleSet.Spawn_distance)));
+                        NativeFunction.Natives.GET_POSITION_BY_SIDE_OF_ROAD<bool>(_spawnCoords, 0, out Vector3 _outPosition);
+                        NativeFunction.Natives.GET_CLOSEST_VEHICLE_NODE_WITH_HEADING(_spawnCoords, out Vector3 _, out float _heading, 1, 3.0f, 0.0f);
+                        Rage.Vehicle _unitVehicle = new Rage.Vehicle(_vehicleName, _outPosition, _heading);
+                        if (_colorString != string.Empty)
+                        {
+                            Color _vehicleColor = Color.FromName(_colorString);
+                            _unitVehicle.PrimaryColor = _vehicleColor;
+                        }
+                        Blip _unitVehicleBlip = new Blip(_unitVehicle);
+                        _unitVehicleBlip.Color = Color.LightBlue;
+                        List<Ped> _code2UnitPeds = new List<Ped>();
+                        _choosePeds(2, _code2Unit.CP.VehicleSet.Peds, out _code2UnitPeds);
+                        foreach (Ped _ped in _code2UnitPeds)
+                        {
+                            Game.LogTrivial(_ped.Model);
+                            Rage.Ped _code2UnitPed = new Rage.Ped(_ped.Model, _unitVehicle.Position, 0);
+                            Functions.SetPedAsCop(_code2UnitPed);
+                            _code2UnitPed.RelationshipGroup = "COP";
+                            _setPedVariation(_ped, _code2UnitPed);
+                            _setPedProps(_ped, _code2UnitPed);
+                            _setPedWeapons(_code2Unit.CP.VehicleSet.Weapons, _code2UnitPed);
+                            int _freeSeatInVehicle = (int)_unitVehicle.GetFreeSeatIndex();
+                            _code2UnitPed.WarpIntoVehicle(_unitVehicle, _freeSeatInVehicle);
+                        }
+                        _unitVehicle.Driver.Tasks.DriveToPosition(_player.Position, 120f, VehicleDrivingFlags.AllowWrongWay | VehicleDrivingFlags.DriveAroundObjects | VehicleDrivingFlags.DriveAroundPeds | VehicleDrivingFlags.DriveAroundVehicles | VehicleDrivingFlags.Emergency);
+                    }
+                };
+
                 s_code2UnitMenuItems.Add(_code2UnitItem);
             }
 
@@ -226,11 +409,11 @@ namespace LSPDFR_Reborn.Backup
             });
         }
 
-        private void _setPedWeapons(Weapons _weapons, Rage.Ped _code3UnitPed)
+        private void _setPedWeapons(Weapons _weapons, Rage.Ped _unitPed)
         {
             foreach (NonLethal _nonLethal in _weapons.NonLethals.NonLethal)
             {
-                new Weapon(_nonLethal.Text, new Vector3(0f, 0f, 0f), 500).GiveTo(_code3UnitPed);
+                new Weapon(_nonLethal.Text, new Vector3(0f, 0f, 0f), 500).GiveTo(_unitPed);
             }
 
             if (_weapons.HandGuns.HandGun.Count > 1)
@@ -238,11 +421,132 @@ namespace LSPDFR_Reborn.Backup
                 Random r = new Random();
                 int e = r.Next(0, 100);
                 var _orderedList = _weapons.HandGuns.HandGun.OrderBy(x => Math.Abs(int.Parse(x.Chance) - e)).ToList();
-                Weapon _handgun = new Weapon(_orderedList.First().Text, new Vector3(0f, 0f, 0f), 500);
-                _handgun.GiveTo(_code3UnitPed);
-                _code3UnitPed.Inventory.AddComponentToWeapon(_handgun.Asset, _orderedList.First().Comp_1);
-                _code3UnitPed.Inventory.EquippedWeapon = _handgun.Asset;
+                Weapon _handGun = new Weapon(_orderedList.First().Text, new Vector3(0f, 0f, 0f), 500);
+                _handGun.GiveTo(_unitPed);
+                if (_orderedList.First().Comp_1 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_handGun.Asset, _orderedList.First().Comp_1);
+                    _unitPed.Inventory.EquippedWeapon = _handGun.Asset;
+                }
+                if (_orderedList.First().Comp_2 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_handGun.Asset, _orderedList.First().Comp_2);
+                }
+                if (_orderedList.First().Comp_3 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_handGun.Asset, _orderedList.First().Comp_3);
+                }
+                if (_orderedList.First().Comp_4 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_handGun.Asset, _orderedList.First().Comp_4);
+                }
+                if (_orderedList.First().Comp_5 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_handGun.Asset, _orderedList.First().Comp_5);
+                }
+                if (_orderedList.First().Comp_6 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_handGun.Asset, _orderedList.First().Comp_6);
+                }
             }
+            else if (_weapons.HandGuns.HandGun.Count == 1)
+            {
+                Weapon _handGun = new Weapon(_weapons.HandGuns.HandGun.First().Text, new Vector3(0f, 0f, 0f), 500);
+                _handGun.GiveTo(_unitPed);
+                if (_weapons.HandGuns.HandGun.First().Comp_1 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_handGun.Asset, _weapons.HandGuns.HandGun.First().Comp_1);
+                    _unitPed.Inventory.EquippedWeapon = _handGun.Asset;
+                }
+                if (_weapons.HandGuns.HandGun.First().Comp_2 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_handGun.Asset, _weapons.HandGuns.HandGun.First().Comp_2);
+                }
+                if (_weapons.HandGuns.HandGun.First().Comp_3 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_handGun.Asset, _weapons.HandGuns.HandGun.First().Comp_3);
+                }
+                if (_weapons.HandGuns.HandGun.First().Comp_4 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_handGun.Asset, _weapons.HandGuns.HandGun.First().Comp_4);
+                }
+                if (_weapons.HandGuns.HandGun.First().Comp_5 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_handGun.Asset, _weapons.HandGuns.HandGun.First().Comp_5);
+                }
+                if (_weapons.HandGuns.HandGun.First().Comp_6 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_handGun.Asset, _weapons.HandGuns.HandGun.First().Comp_6);
+                }
+            }
+            else
+                Game.LogTrivial("Couldn't find any Handguns.");
+
+            if (_weapons.LongGuns.LongGun.Count > 1)
+            {
+                Random r = new Random();
+                int e = r.Next(0, 100);
+                var _orderedList = _weapons.LongGuns.LongGun.OrderBy(x => Math.Abs(int.Parse(x.Chance) - e)).ToList();
+                Weapon _longGun = new Weapon(_orderedList.First().Text, new Vector3(0f, 0f, 0f), 500);
+                _longGun.GiveTo(_unitPed);
+                if (_orderedList.First().Comp_1 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_longGun.Asset, _orderedList.First().Comp_1);
+                    _unitPed.Inventory.EquippedWeapon = _longGun.Asset;
+                }
+                if (_orderedList.First().Comp_2 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_longGun.Asset, _orderedList.First().Comp_2);
+                }
+                if (_orderedList.First().Comp_3 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_longGun.Asset, _orderedList.First().Comp_3);
+                }
+                if (_orderedList.First().Comp_4 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_longGun.Asset, _orderedList.First().Comp_4);
+                }
+                if (_orderedList.First().Comp_5 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_longGun.Asset, _orderedList.First().Comp_5);
+                }
+                if (_orderedList.First().Comp_6 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_longGun.Asset, _orderedList.First().Comp_6);
+                }
+            }
+            else if (_weapons.LongGuns.LongGun.Count == 1)
+            {
+                Weapon _longGun = new Weapon(_weapons.LongGuns.LongGun.First().Text, new Vector3(0f, 0f, 0f), 500);
+                _longGun.GiveTo(_unitPed);
+                if (_weapons.LongGuns.LongGun.First().Comp_1 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_longGun.Asset, _weapons.LongGuns.LongGun.First().Comp_1);
+                    _unitPed.Inventory.EquippedWeapon = _longGun.Asset;
+                }
+                if (_weapons.LongGuns.LongGun.First().Comp_2 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_longGun.Asset, _weapons.LongGuns.LongGun.First().Comp_2);
+                }
+                if (_weapons.LongGuns.LongGun.First().Comp_3 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_longGun.Asset, _weapons.LongGuns.LongGun.First().Comp_3);
+                }
+                if (_weapons.LongGuns.LongGun.First().Comp_4 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_longGun.Asset, _weapons.LongGuns.LongGun.First().Comp_4);
+                }
+                if (_weapons.LongGuns.LongGun.First().Comp_5 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_longGun.Asset, _weapons.LongGuns.LongGun.First().Comp_5);
+                }
+                if (_weapons.LongGuns.LongGun.First().Comp_6 != null)
+                {
+                    _unitPed.Inventory.AddComponentToWeapon(_longGun.Asset, _weapons.LongGuns.LongGun.First().Comp_6);
+                }
+            }
+            else
+                Game.LogTrivial("Couldn't find any Longguns.");
         }
 
         private void _setPedProps(Ped _unitPed, Rage.Ped _ragePed)
@@ -360,24 +664,6 @@ namespace LSPDFR_Reborn.Backup
 
         private void _choosePeds(int _requiredPeds, Peds _peds, out List<Ped> _returnedPeds)
         {
-            /*for (int i = 0; i < _requiredPeds; i++)
-            {
-                Random r = new Random();
-                int e = r.Next(0, 100);
-                List<int> array = new List<int> { };
-                foreach (Ped _ped in _peds.Ped)
-                {
-                    array.Add(int.Parse(_ped.Chance));
-                }
-                var nearest = array.OrderBy(x => Math.Abs((long)x - e)).First();
-                foreach (Ped _ped in _peds.Ped)
-                {
-                    if (int.Parse(_ped.Chance) == nearest)
-                    {
-                        _returnedPeds.Add(_ped);
-                    }
-                }
-            }*/
             _returnedPeds = new List<Ped>();
 
             if (_peds.Ped.Count > 1)
@@ -399,16 +685,6 @@ namespace LSPDFR_Reborn.Backup
             {
                 Game.LogTrivial("Couldn't find any peds to spawn.");
             }
-
-            /*foreach (Ped _ped in _peds.Ped)
-            {
-                array.Add(int.Parse(_ped.Chance));
-            }
-            array.OrderBy(x => Math.Abs((long)x - e)).First();
-            for (int i = 0; i < _requiredPeds; i++)
-            {
-                _returnedPeds.Add(_peds.Ped[array[i]]);
-            }*/
 
             if (_returnedPeds.Count > _requiredPeds)
             {

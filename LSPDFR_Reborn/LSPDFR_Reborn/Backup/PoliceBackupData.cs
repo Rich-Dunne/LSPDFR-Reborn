@@ -163,6 +163,16 @@ namespace LSPDFR_Reborn.Backup
         public string Chance { get; set; }
         [XmlAttribute(AttributeName = "comp_1")]
         public string Comp_1 { get; set; }
+        [XmlAttribute(AttributeName = "comp_2")]
+        public string Comp_2 { get; set; }
+        [XmlAttribute(AttributeName = "comp_3")]
+        public string Comp_3 { get; set; }
+        [XmlAttribute(AttributeName = "comp_4")]
+        public string Comp_4 { get; set; }
+        [XmlAttribute(AttributeName = "comp_5")]
+        public string Comp_5 { get; set; }
+        [XmlAttribute(AttributeName = "comp_6")]
+        public string Comp_6 { get; set; }
         [XmlText]
         public string Text { get; set; }
     }
@@ -181,6 +191,16 @@ namespace LSPDFR_Reborn.Backup
         public string Chance { get; set; }
         [XmlAttribute(AttributeName = "comp_1")]
         public string Comp_1 { get; set; }
+        [XmlAttribute(AttributeName = "comp_2")]
+        public string Comp_2 { get; set; }
+        [XmlAttribute(AttributeName = "comp_3")]
+        public string Comp_3 { get; set; }
+        [XmlAttribute(AttributeName = "comp_4")]
+        public string Comp_4 { get; set; }
+        [XmlAttribute(AttributeName = "comp_5")]
+        public string Comp_5 { get; set; }
+        [XmlAttribute(AttributeName = "comp_6")]
+        public string Comp_6 { get; set; }
         [XmlText]
         public string Text { get; set; }
     }
